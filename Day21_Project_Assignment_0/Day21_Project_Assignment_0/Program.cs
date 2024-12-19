@@ -36,13 +36,16 @@ namespace Day21_Project_Assignment_0
     class BuffManager
     {
         LinkedList<Buff> _buffs = new LinkedList<Buff>();
+
         public void AddBuff(Buff buff)
         {
             _buffs.AddLast(buff);
         }
         public void UpdateBuffs()
         {
-            foreach (Buff buff in _buffs)
+            //▼ foreach문 안에서 _buffs의 복사본인 temp가 아닌 원본일 경우 foreach문 자체가 터진다.
+            LinkedList<Buff> temp = new LinkedList<Buff>(_buffs);
+            foreach (Buff buff in temp)
             {
                 if (buff.Duration > 0)
                 {
@@ -50,13 +53,14 @@ namespace Day21_Project_Assignment_0
                 }
                 else if (buff.Duration <= 0)
                 {
-                    Console.WriteLine($"{buff.Name}");
+                    Console.WriteLine($"{buff?.Name}");
                     _buffs.Remove(buff);
                 }
             }
         }
         public void ShowActiveBuffs()
         {
+
             Console.WriteLine("현재 활성화된 버프:");
             foreach (Buff buff in _buffs)
             {

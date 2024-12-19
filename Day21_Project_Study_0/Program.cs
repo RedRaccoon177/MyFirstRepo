@@ -21,7 +21,6 @@ namespace Day21_Project_Study_0
     }
     */
 
-
     internal class Program
     {
         static void Main(string[] args)
