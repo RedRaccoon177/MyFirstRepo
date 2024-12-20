@@ -67,5 +67,7 @@ namespace Day15_Project_Assignment_0_0
             Console.WriteLine($"{_attack}");
             Console.WriteLine($"{_defense}");
         }
+
+
     }
 }

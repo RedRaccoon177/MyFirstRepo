@@ -48,6 +48,7 @@ namespace Day15_Project_Study
 
     class Player
     {
+
         //▼ 필드
         Item[] _inven;
 
